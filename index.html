@@ -52,6 +52,11 @@
                                     @click="filter ='all' ">All</button>
                                     <button @click="filter = 'active' " :class="{active: filter == 'active'}">Active</button>
                                     <button @click="filter = 'complete' " :class="{active: filter == 'complete'}">Complete</button>
+
+                                </div>
+                                <br>
+                                <div class="completed-container">
+                                    <button v-if="showClearCompleteButton" @click="clearComplete">Clear complete</button>
                                 </div>
                                 
                             </div>

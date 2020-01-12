@@ -38,6 +38,9 @@ new Vue({
             }else if(this.filter == 'complete'){
                 return this.tasks.filter(todo => todo.complete)
             }
+        },
+        showClearCompleteButton(){
+            return this.tasks.filter(todo => todo.complete).length > 0
         }
     },
     
@@ -96,6 +99,10 @@ new Vue({
         // check all the tasks
         checkAllTasks(){
             this.tasks.forEach(task=> task.complete = event.target.checked)
+        },
+
+        clearComplete(){
+            this.tasks = this.tasks.filter(task => !task.complete)
         }
     },
 })
